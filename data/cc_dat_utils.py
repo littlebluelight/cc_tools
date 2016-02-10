@@ -85,7 +85,7 @@ def make_field_from_bytes(field_type, field_bytes):
             x = int.from_bytes(field_bytes[i:(i + 1)], byteorder=cc_data.BYTE_ORDER)
             y = int.from_bytes(field_bytes[i + 1:(i + 2)], byteorder=cc_data.BYTE_ORDER)
             monsters.append(cc_data.CCCoordinate(x, y))
-        return cc_data.CCMonsterMovementField(monsters)
+        return cc_data.CCMonsterMovementField(monsters)#this similar with no bytes (get x&y out of json)
     else:
         if __debug__:
             raise AssertionError("Unsupported field type: " + str(field_type))

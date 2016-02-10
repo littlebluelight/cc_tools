@@ -13,7 +13,7 @@ class CCField:
     """
 
     def __init__(self, type_val, byte_val):
-        self.type_val = type
+        self.type_val = typex
         self.byte_val = byte_val
 
     @property
