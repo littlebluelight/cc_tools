@@ -473,7 +473,6 @@ class CCDataFile:
     @property
     def level_count(self):
         return len(self.levels)
-
     def add_level(self, level):
         self.levels.append(level)
 
