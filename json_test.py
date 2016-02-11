@@ -7,19 +7,19 @@ def make_LevelPack_from_json(json_data):
     level_pack= cc_data.CCDataFile()
     for json_levels in json_data:
         level_number=json_levels["level_number"]
-        timer=json_levels["timer"]
-        chip_number=json_levels["chip_number"]
+        time=json_levels["time"]
+        num_chips=json_levels["num_chips"]
         upper_layer=json_levels["upper_layer"]
         lower_layer=json_levels["lower_layer"]
-        optional_field=json_levels["optional_field"]
+        optional_fields=json_levels["optional_fields"]
 
         real_level = cc_data.CCLevel()
         real_level.level_number=level_number
-        real_level.timer=timer
-        real_level.chip_number=chip_number
+        real_level.time=time
+        real_level.num_chips=num_chips
         real_level.upper_layer=upper_layer
         real_level.lower_layer=lower_layer
-        real_level.optional_fields=optional_field
+        real_level.optional_fields=optional_fields
         #look through fields in list figure out what kind of field  for /if statement based on type make new field and add to level
         #get type print type of field
         #if type print blah
