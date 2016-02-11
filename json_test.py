@@ -49,6 +49,7 @@ json_reader.close()
 level_pack = make_LevelPack_from_json(json_data)
 
 def make_cc_data_from_json(json_data):
-    cc_dat = make_cc_data_from_json(json_data)
     output_dat_filename="data/cc_dat.dat"
-    cc_dat_utils.write_cc_data_to_dat(cc_data, output_dat_filename)
+    cc_dat_utils.write_cc_data_to_dat(level_pack, output_dat_filename)
+
+make_cc_data_from_json(json_data)
