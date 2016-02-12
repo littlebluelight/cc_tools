@@ -21,11 +21,10 @@ def make_LevelPack_from_json(json_data):
         real_level.lower_layer = lower_layer
         real_level.optional_fields = optional_fields
 
-    for json_field in json_data:
-        if json_field["type"] == 3:
-            field_title = json_field["title"]
-            cc_field = cc_data.CCMapTitleField(field_title)
-
+        for json_field in json_levels:
+            if json_field["type"] == 3:
+                field_title = json_field["title"]
+                cc_field = cc_data.CCMapTitleField(field_title)
 
 
         #look through fields in list figure out what kind of field  for /if statement based on type make new field and add to level
