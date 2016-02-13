@@ -21,16 +21,28 @@ def make_LevelPack_from_json(json_data):
         real_level.lower_layer = lower_layer
         real_level.optional_fields = optional_fields
 
-        for json_field in json_levels:
-            if json_field["type"] == 3:
+        for json_field in optional_fields:
+            if json_field["type_val"] == 3:
                 field_title = json_field["title"]
                 cc_field = cc_data.CCMapTitleField(field_title)
-
-
-        #look through fields in list figure out what kind of field  for /if statement based on type make new field and add to level
-        #get type print type of field
-        #if type print blah
-        #fill in with what makes that field type
+            elif json_field["type_val"] == 4:
+                field_traps = json_field["traps"]
+                cc_field = cc_data.CCTrapControlsField(field_traps)
+            elif json_field["type_val"] == 5:
+                field_machines = json_field["machines"]
+                cc_field = cc_data.CCCloningMachineControlsField(field_machines)
+            elif json_field["type_val"] == 6:
+                field_password = json_field["password"]
+                cc_field = cc_data.CCEncodedPasswordField(field_password)
+            elif json_field["type_val"] == 7:
+                field_hint = json_field["hint"]
+                cc_field = cc_data.CCMapHintField(field_hint)
+            elif json_field["type_val"] == 8:
+                field_password = json_field["password"]
+                cc_field = cc_data.CCPasswordField(field_password)
+            elif json_field["type_val"] == 10:
+                field_monsters = json_field["monsters"]
+                cc_field = cc_data.CCMonsterMovementField(field_monsters)
 
         level_pack.add_level(real_level)
     return level_pack
